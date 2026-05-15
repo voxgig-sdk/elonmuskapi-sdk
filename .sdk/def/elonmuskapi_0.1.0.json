@@ -1,0 +1,99 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "ElonMuskAPI",
+    "description": "MaaS: Musk as a Service: Get Random News Articles Featuring Our Lord and Savior Elon Musk Using This Free Public API!",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://elonmu.sh/"
+    },
+    "termsOfService": "https://elonmu.sh/"
+  },
+  "servers": [
+    {
+      "url": "https://elonmu.sh",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get random Elon Musk news article",
+        "description": "Returns a random news article featuring Elon Musk from various news outlets",
+        "operationId": "getRandomArticle",
+        "tags": [
+          "Articles"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with a random news article",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "description": "The title of the news article"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "The URL to the original news article"
+                    },
+                    "source": {
+                      "type": "string",
+                      "description": "The news outlet that published the article"
+                    },
+                    "publishedAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "The publication date and time of the article"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "A brief description or excerpt from the article"
+                    }
+                  }
+                },
+                "example": {
+                  "title": "Elon Musk Announces New Tesla Model",
+                  "url": "https://example.com/article",
+                  "source": "TechNews Daily",
+                  "publishedAt": "2024-01-15T10:30:00Z",
+                  "description": "Tesla CEO Elon Musk unveiled the latest electric vehicle innovation..."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Articles",
+      "description": "Operations related to Elon Musk news articles"
+    }
+  ],
+  "externalDocs": {
+    "description": "API Documentation",
+    "url": "https://elonmu.sh/"
+  }
+}

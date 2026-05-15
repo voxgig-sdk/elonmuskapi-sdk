@@ -1,0 +1,28 @@
+# BasicGetRandomArticleFlow
+
+main: kit: flow: BasicGetRandomArticleFlow:
+{
+  entity: "get_random_article",
+  kind: "basic",
+  name: "BasicGetRandomArticleFlow",
+  step: [
+    {
+      input: {
+        ref: "get_random_article_ref01",
+        srcdatavar: "get_random_article_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-get_random_article_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGetRandomArticleFlow"
+}

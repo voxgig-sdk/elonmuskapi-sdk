@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://elonmu.sh/"
+      }
+      description: "MaaS: Musk as a Service: Get Random News Articles Featuring Our Lord and Savior Elon Musk Using This Free Public API!"
+      servers: [
+        {
+          description: "Production server"
+          url: "https://elonmu.sh"
+        }
+      ]
+      termsOfService: "https://elonmu.sh/"
+      title: "ElonMuskAPI"
+      version: "1.0.0"
+    }
+  }
+}
+
+}
