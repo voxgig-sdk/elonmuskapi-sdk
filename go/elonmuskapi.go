@@ -1,10 +1,10 @@
 package voxgigelonmuskapisdk
 
 import (
-	"github.com/voxgig-sdk/elonmuskapi-sdk/core"
-	"github.com/voxgig-sdk/elonmuskapi-sdk/entity"
-	"github.com/voxgig-sdk/elonmuskapi-sdk/feature"
-	_ "github.com/voxgig-sdk/elonmuskapi-sdk/utility"
+	"github.com/voxgig-sdk/elonmuskapi-sdk/go/core"
+	"github.com/voxgig-sdk/elonmuskapi-sdk/go/entity"
+	"github.com/voxgig-sdk/elonmuskapi-sdk/go/feature"
+	_ "github.com/voxgig-sdk/elonmuskapi-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

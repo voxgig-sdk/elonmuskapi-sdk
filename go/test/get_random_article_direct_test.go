@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/elonmuskapi-sdk"
-	"github.com/voxgig-sdk/elonmuskapi-sdk/core"
+	sdk "github.com/voxgig-sdk/elonmuskapi-sdk/go"
+	"github.com/voxgig-sdk/elonmuskapi-sdk/go/core"
 )
 
 func TestGetRandomArticleDirect(t *testing.T) {

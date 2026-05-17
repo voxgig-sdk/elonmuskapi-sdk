@@ -6,21 +6,24 @@
         "published_at": "s33",
         "source": "s34",
         "title": "s35",
-        "url": "s36"
+        "url": "s36",
+        "id": "GET_RANDOM_ARTICLE00"
       },
       "GET_RANDOM_ARTICLE01": {
         "description": "s64",
         "published_at": "s65",
         "source": "s66",
         "title": "s67",
-        "url": "s68"
+        "url": "s68",
+        "id": "GET_RANDOM_ARTICLE01"
       },
       "GET_RANDOM_ARTICLE02": {
         "description": "s96",
         "published_at": "s97",
         "source": "s98",
         "title": "s99",
-        "url": "s9a"
+        "url": "s9a",
+        "id": "GET_RANDOM_ARTICLE02"
       }
     }
   },
