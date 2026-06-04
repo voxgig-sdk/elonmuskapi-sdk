@@ -17,7 +17,17 @@
         ],
         "termsOfService": "https://elonmu.sh/",
         "title": "ElonMuskAPI",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Fetch a random news article mentioning Elon Musk",
+        "homepage": "https://elonmu.sh",
+        "docs_url": "https://github.com/nickatnight/elonmu.sh",
+        "license_short": "No explicit licence declared; site copyright © 2024 elonmu.sh",
+        "license_md": "- The elonmu.sh site shows a \"© 2024 elonmu.sh All rights reserved\" notice on the homepage.\n- The [nickatnight/elonmu.sh](https://github.com/nickatnight/elonmu.sh) repository does not declare an explicit open-source licence.\n- Article content is sourced from third-party news outlets via NewsAPI, so the underlying articles remain subject to their original publishers' terms.\n- Treat the service as a free hobby endpoint and check with the maintainer before relying on it for production use.",
+        "about_md": "ElonMuskAPI is a small free public API that returns a random recent news article mentioning Elon Musk. It is maintained by [nickatnight](https://github.com/nickatnight/elonmu.sh) and described by its author as \"MaaS: Musk as a Service\" — a hobby project built on Node.js, TypeScript, and Express, deployed on DigitalOcean App Platform.\n\nUnder the hood the service wraps [NewsAPI](https://newsapi.org/) and picks one matching article per request, so coverage spans whichever outlets NewsAPI indexes.\n\nWhat you get from the API:\n\n- A single random article per call from `GET /api`\n- Fields observed in the success response: `source`, `title`, `description`, `url`, `urlImage`, and `publishDate` (ISO 8601 timestamp)\n- A `400` response with an `error` message if the upstream NewsAPI call fails\n\nOperational notes: the endpoint is unauthenticated and free to use, CORS is disabled per the freepublicapis.com listing, and there is no documented rate limit — be polite, since the service ultimately consumes a third-party news feed.",
+        "entity_desc": {
+          "get_random_article": "Returns a single random news article mentioning Elon Musk via `GET /api`, with fields including `source`, `title`, `description`, `url`, `urlImage`, and `publishDate`."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -25,7 +35,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "get_random_article": {

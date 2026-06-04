@@ -20,9 +20,6 @@ class ElonmuskapiConfig
             ],
             "options" => [
                 "base" => "https://elonmu.sh",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

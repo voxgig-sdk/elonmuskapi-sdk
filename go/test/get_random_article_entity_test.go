@@ -117,7 +117,6 @@ func get_random_articleBasicSetup(extra map[string]any) *entityTestSetup {
 		"ELONMUSKAPI_TEST_GET_RANDOM_ARTICLE_ENTID": idmap,
 		"ELONMUSKAPI_TEST_LIVE":      "FALSE",
 		"ELONMUSKAPI_TEST_EXPLAIN":   "FALSE",
-		"ELONMUSKAPI_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["ELONMUSKAPI_TEST_GET_RANDOM_ARTICLE_ENTID"])
@@ -128,7 +127,6 @@ func get_random_articleBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["ELONMUSKAPI_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["ELONMUSKAPI_APIKEY"],
 			},
 			extra,
 		})

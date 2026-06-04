@@ -17,9 +17,7 @@ loading a specific record.
 ```ts
 import { ElonmuskapiSDK } from 'elonmuskapi'
 
-const client = new ElonmuskapiSDK({
-  apikey: process.env.ELONMUSKAPI_APIKEY,
-})
+const client = new ElonmuskapiSDK({})
 ```
 
 ### 3. Load a getrandomarticle
@@ -82,7 +80,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new ElonmuskapiSDK({ apikey: '...' })
+const client = new ElonmuskapiSDK()
 const testClient = client.tester()
 ```
 
@@ -118,7 +116,6 @@ const logger = {
 }
 
 const client = new ElonmuskapiSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -129,7 +126,6 @@ Create a `.env.local` file at the project root:
 
 ```
 ELONMUSKAPI_TEST_LIVE=TRUE
-ELONMUSKAPI_APIKEY=<your-key>
 ```
 
 Then run:
@@ -147,7 +143,6 @@ cd ts && npm test
 
 ```ts
 new ElonmuskapiSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -158,7 +153,6 @@ new ElonmuskapiSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

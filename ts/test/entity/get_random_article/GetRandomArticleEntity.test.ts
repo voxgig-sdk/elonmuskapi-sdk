@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'ELONMUSKAPI_TEST_GET_RANDOM_ARTICLE_ENTID': idmap,
     'ELONMUSKAPI_TEST_LIVE': 'FALSE',
     'ELONMUSKAPI_TEST_EXPLAIN': 'FALSE',
-    'ELONMUSKAPI_APIKEY': 'NONE',
   })
 
   idmap = env['ELONMUSKAPI_TEST_GET_RANDOM_ARTICLE_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new ElonmuskapiSDK(merge([
       {
-        apikey: env.ELONMUSKAPI_APIKEY,
       },
       extra
     ]))
