@@ -1,22 +1,8 @@
 # Elonmuskapi SDK
 
-Fetch a random news article mentioning Elon Musk
+ElonMuskAPI client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About ElonMuskAPI
-
-ElonMuskAPI is a small free public API that returns a random recent news article mentioning Elon Musk. It is maintained by [nickatnight](https://github.com/nickatnight/elonmu.sh) and described by its author as "MaaS: Musk as a Service" — a hobby project built on Node.js, TypeScript, and Express, deployed on DigitalOcean App Platform.
-
-Under the hood the service wraps [NewsAPI](https://newsapi.org/) and picks one matching article per request, so coverage spans whichever outlets NewsAPI indexes.
-
-What you get from the API:
-
-- A single random article per call from `GET /api`
-- Fields observed in the success response: `source`, `title`, `description`, `url`, `urlImage`, and `publishDate` (ISO 8601 timestamp)
-- A `400` response with an `error` message if the upstream NewsAPI call fails
-
-Operational notes: the endpoint is unauthenticated and free to use, CORS is disabled per the freepublicapis.com listing, and there is no documented rate limit — be polite, since the service ultimately consumes a third-party news feed.
 
 ## Try it
 
@@ -50,27 +36,31 @@ gem install elonmuskapi-sdk
 luarocks install elonmuskapi-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { ElonmuskapiSDK } from 'elonmuskapi'
 
-const client = new ElonmuskapiSDK({})
+const client = new ElonmuskapiSDK({
+  apikey: process.env.ELONMUSKAPI_APIKEY,
+})
 
+// Load getrandomarticle data
+const getrandomarticle = await client.GetRandomArticle().load({})
+console.log(getrandomarticle.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **GetRandomArticle** | Returns a single random news article mentioning Elon Musk via `GET /api`, with fields including `source`, `title`, `description`, `url`, `urlImage`, and `publishDate`. | `/` |
+| **GetRandomArticle** |  | `/` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -110,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from elonmuskapi_sdk import ElonmuskapiSDK
 
-client = ElonmuskapiSDK({})
+client = ElonmuskapiSDK({
+    "apikey": os.environ.get("ELONMUSKAPI_APIKEY"),
+})
 
 
 # Load a specific getrandomarticle
-getrandomarticle, err = client.GetRandomArticle(None).load(
-    {"id": "example_id"}, None
-)
+getrandomarticle, err = client.GetRandomArticle().load({"id": "example_id"})
+print(getrandomarticle)
 ```
 
 ### PHP
@@ -127,13 +119,14 @@ getrandomarticle, err = client.GetRandomArticle(None).load(
 <?php
 require_once 'elonmuskapi_sdk.php';
 
-$client = new ElonmuskapiSDK([]);
+$client = new ElonmuskapiSDK([
+    "apikey" => getenv("ELONMUSKAPI_APIKEY"),
+]);
 
 
 // Load a specific getrandomarticle
-[$getrandomarticle, $err] = $client->GetRandomArticle(null)->load(
-    ["id" => "example_id"], null
-);
+[$getrandomarticle, $err] = $client->GetRandomArticle()->load(["id" => "example_id"]);
+print_r($getrandomarticle);
 ```
 
 ### Golang
@@ -141,8 +134,13 @@ $client = new ElonmuskapiSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/elonmuskapi-sdk/go"
 
-client := sdk.NewElonmuskapiSDK(map[string]any{})
+client := sdk.NewElonmuskapiSDK(map[string]any{
+    "apikey": os.Getenv("ELONMUSKAPI_APIKEY"),
+})
 
+// Load getrandomarticle data
+getrandomarticle, err := client.GetRandomArticle(nil).Load(map[string]any{}, nil)
+fmt.Println(getrandomarticle)
 ```
 
 ### Ruby
@@ -150,13 +148,14 @@ client := sdk.NewElonmuskapiSDK(map[string]any{})
 ```ruby
 require_relative "Elonmuskapi_sdk"
 
-client = ElonmuskapiSDK.new({})
+client = ElonmuskapiSDK.new({
+  "apikey" => ENV["ELONMUSKAPI_APIKEY"],
+})
 
 
 # Load a specific getrandomarticle
-getrandomarticle, err = client.GetRandomArticle(nil).load(
-  { "id" => "example_id" }, nil
-)
+getrandomarticle, err = client.GetRandomArticle().load({ "id" => "example_id" })
+puts getrandomarticle
 ```
 
 ### Lua
@@ -164,13 +163,14 @@ getrandomarticle, err = client.GetRandomArticle(nil).load(
 ```lua
 local sdk = require("elonmuskapi_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("ELONMUSKAPI_APIKEY"),
+})
 
 
 -- Load a specific getrandomarticle
-local getrandomarticle, err = client:GetRandomArticle(nil):load(
-  { id = "example_id" }, nil
-)
+local getrandomarticle, err = client:GetRandomArticle():load({ id = "example_id" })
+print(getrandomarticle)
 ```
 
 ## Unit testing in offline mode
@@ -189,25 +189,21 @@ const result = await client.GetRandomArticle().load({ id: 'test01' })
 ### Python
 
 ```python
-client = ElonmuskapiSDK.test(None, None)
-result, err = client.GetRandomArticle(None).load(
-    {"id": "test01"}, None
-)
+client = ElonmuskapiSDK.test()
+result, err = client.GetRandomArticle().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = ElonmuskapiSDK::test(null, null);
-[$result, $err] = $client->GetRandomArticle(null)->load(
-    ["id" => "test01"], null
-);
+$client = ElonmuskapiSDK::test();
+[$result, $err] = $client->GetRandomArticle()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.GetRandomArticle(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -216,19 +212,15 @@ result, err := client.GetRandomArticle(nil).Load(
 ### Ruby
 
 ```ruby
-client = ElonmuskapiSDK.test(nil, nil)
-result, err = client.GetRandomArticle(nil).load(
-  { "id" => "test01" }, nil
-)
+client = ElonmuskapiSDK.test
+result, err = client.GetRandomArticle().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:GetRandomArticle(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:GetRandomArticle():load({ id = "test01" })
 ```
 
 ## How it works
@@ -332,16 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the ElonMuskAPI
-
-- Upstream: [https://elonmu.sh](https://elonmu.sh)
-- API docs: [https://github.com/nickatnight/elonmu.sh](https://github.com/nickatnight/elonmu.sh)
-
-- The elonmu.sh site shows a "© 2024 elonmu.sh All rights reserved" notice on the homepage.
-- The [nickatnight/elonmu.sh](https://github.com/nickatnight/elonmu.sh) repository does not declare an explicit open-source licence.
-- Article content is sourced from third-party news outlets via NewsAPI, so the underlying articles remain subject to their original publishers' terms.
-- Treat the service as a free hobby endpoint and check with the maintainer before relying on it for production use.
 
 ---
 

@@ -74,12 +74,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'ELONMUSKAPI_TEST_GET_RANDOM_ARTICLE_ENTID': {},
     'ELONMUSKAPI_TEST_LIVE': 'FALSE',
+    'ELONMUSKAPI_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.ELONMUSKAPI_TEST_LIVE
 
   if (live) {
     const client = new ElonmuskapiSDK({
+      apikey: env.ELONMUSKAPI_APIKEY,
     })
 
     let idmap: any = env['ELONMUSKAPI_TEST_GET_RANDOM_ARTICLE_ENTID']

@@ -99,12 +99,14 @@ func get_random_articleDirectSetup(mockres any) *get_random_articleDirectSetupRe
 	env := envOverride(map[string]any{
 		"ELONMUSKAPI_TEST_GET_RANDOM_ARTICLE_ENTID": map[string]any{},
 		"ELONMUSKAPI_TEST_LIVE":    "FALSE",
+		"ELONMUSKAPI_APIKEY":       "NONE",
 	})
 
 	live := env["ELONMUSKAPI_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["ELONMUSKAPI_APIKEY"],
 		}
 		client := sdk.NewElonmuskapiSDK(mergedOpts)
 

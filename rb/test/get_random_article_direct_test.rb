@@ -61,12 +61,14 @@ def get_random_article_direct_setup(mockres)
   env = Runner.env_override({
     "ELONMUSKAPI_TEST_GET_RANDOM_ARTICLE_ENTID" => {},
     "ELONMUSKAPI_TEST_LIVE" => "FALSE",
+    "ELONMUSKAPI_APIKEY" => "NONE",
   })
 
   live = env["ELONMUSKAPI_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
+      "apikey" => env["ELONMUSKAPI_APIKEY"],
     }
     client = ElonmuskapiSDK.new(merged_opts)
     return {

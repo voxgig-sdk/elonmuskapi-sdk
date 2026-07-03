@@ -82,6 +82,7 @@ def get_random_article_basic_setup(extra)
     "ELONMUSKAPI_TEST_GET_RANDOM_ARTICLE_ENTID" => idmap,
     "ELONMUSKAPI_TEST_LIVE" => "FALSE",
     "ELONMUSKAPI_TEST_EXPLAIN" => "FALSE",
+    "ELONMUSKAPI_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -93,6 +94,7 @@ def get_random_article_basic_setup(extra)
   if env["ELONMUSKAPI_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["ELONMUSKAPI_APIKEY"],
       },
       extra || {},
     ])
