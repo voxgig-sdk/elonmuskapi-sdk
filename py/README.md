@@ -10,7 +10,7 @@ The Python SDK for the Elonmuskapi API — an entity-oriented client following P
 
 ## Install
 ```bash
-pip install elonmuskapi-sdk
+pip install voxgig-sdk-elonmuskapi
 ```
 
 Or install from source:

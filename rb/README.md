@@ -10,13 +10,13 @@ The Ruby SDK for the Elonmuskapi API — an entity-oriented client using idiomat
 
 ## Install
 ```bash
-gem install elonmuskapi-sdk
+gem install voxgig-sdk-elonmuskapi
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "elonmuskapi-sdk"
+gem "voxgig-sdk-elonmuskapi"
 ```
 
 Then run:

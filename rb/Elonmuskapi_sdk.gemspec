@@ -2,9 +2,17 @@ Gem::Specification.new do |spec|
   spec.name          = "voxgig-sdk-elonmuskapi"
   spec.version       = "0.0.1"
   spec.authors       = ["Voxgig"]
-  spec.summary       = "Elonmuskapi SDK for Ruby"
+  spec.summary       = "Unofficial generated Ruby SDK for the ElonMusk public API. Not affiliated with or endorsed by the upstream API provider."
+  spec.description   = "Unofficial generated Ruby SDK for the ElonMusk public API. Not affiliated with or endorsed by the upstream API provider."
   spec.license       = "MIT"
   spec.homepage      = "https://github.com/voxgig-sdk/elonmuskapi-sdk"
+  spec.metadata      = {
+    "homepage_uri"          => "https://github.com/voxgig-sdk/elonmuskapi-sdk",
+    "source_code_uri"       => "https://github.com/voxgig-sdk/elonmuskapi-sdk",
+    "bug_tracker_uri"       => "https://github.com/voxgig-sdk/elonmuskapi-sdk/issues",
+    "changelog_uri"         => "https://github.com/voxgig-sdk/elonmuskapi-sdk/blob/main/CHANGELOG.md",
+    "rubygems_mfa_required" => "true"
+  }
 
   spec.files         = Dir["lib/**/*.rb", "*.rb"]
   spec.require_paths = ["."]

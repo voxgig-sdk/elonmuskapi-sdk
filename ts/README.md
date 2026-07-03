@@ -10,7 +10,7 @@ The TypeScript SDK for the Elonmuskapi API — a type-safe, entity-oriented clie
 
 ## Install
 ```bash
-npm install elonmuskapi
+npm install @voxgig-sdk/elonmuskapi
 ```
 ## Tutorial: your first API call
 

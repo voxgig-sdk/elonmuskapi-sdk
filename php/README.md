@@ -10,7 +10,7 @@ The PHP SDK for the Elonmuskapi API — an entity-oriented client using PHP conv
 
 ## Install
 ```bash
-composer require voxgig/elonmuskapi-sdk
+composer require voxgig-sdk/elonmuskapi
 ```
 
 
