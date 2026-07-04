@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GetRandomArticleEntity
 
 ```python
-get_random_article = client.get_random_article
+get_random_article = client.GetRandomArticle()
 ```
 
 ### Fields
@@ -100,7 +100,7 @@ get_random_article = client.get_random_article
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.get_random_article.load({"id": "get_random_article_id"})
+result = client.GetRandomArticle().load({"id": "get_random_article_id"})
 ```
 
 ### Common Methods

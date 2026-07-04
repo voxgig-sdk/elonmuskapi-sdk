@@ -109,7 +109,7 @@ Alias for `ElonmuskapiSDK.test()`.
 ## GetRandomArticleEntity
 
 ```ts
-const get_random_article = client.get_random_article
+const get_random_article = client.GetRandomArticle()
 ```
 
 ### Fields
@@ -129,7 +129,7 @@ const get_random_article = client.get_random_article
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.get_random_article.load({ id: 'get_random_article_id' })
+const result = await client.GetRandomArticle().load({ id: 'get_random_article_id' })
 ```
 
 ### Common Methods

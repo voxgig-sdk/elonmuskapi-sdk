@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## GetRandomArticleEntity
 
 ```lua
-local get_random_article = client:get_random_article(nil)
+local get_random_article = client:GetRandomArticle(nil)
 ```
 
 ### Fields
@@ -103,7 +103,7 @@ local get_random_article = client:get_random_article(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:get_random_article():load({ id = "get_random_article_id" })
+local result, err = client:GetRandomArticle():load({ id = "get_random_article_id" })
 ```
 
 ### Common Methods

@@ -208,13 +208,7 @@ class ElonmuskapiSDK
   end
 
 
-  # Idiomatic facade: client.get_random_article.list / client.get_random_article.load({ "id" => ... })
-  def get_random_article
-    require_relative 'entity/get_random_article_entity'
-    @get_random_article ||= GetRandomArticleEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.get_random_article instead.
+  # Canonical facade: client.GetRandomArticle.list / client.GetRandomArticle.load({ "id" => ... })
   def GetRandomArticle(data = nil)
     require_relative 'entity/get_random_article_entity'
     GetRandomArticleEntity.new(self, data)

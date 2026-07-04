@@ -33,10 +33,12 @@ client = ElonmuskapiSDK()
 
 ### 3. Load a getrandomarticle
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.getrandomarticle.load({"id": "example_id"})
-    print(result)
+    getrandomarticle = client.GetRandomArticle().load({"id": "example_id"})
+    print(getrandomarticle)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = ElonmuskapiSDK.test()
 
-result = client.getrandomarticle.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+getrandomarticle = client.GetRandomArticle().load({"id": "test01"})
+# getrandomarticle contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -222,7 +225,7 @@ API path: `/`
 
 ### GetRandomArticle
 
-Create an instance: `const get_random_article = client.get_random_article`
+Create an instance: `get_random_article = client.GetRandomArticle()`
 
 #### Operations
 
@@ -242,8 +245,8 @@ Create an instance: `const get_random_article = client.get_random_article`
 
 #### Example: Load
 
-```ts
-const get_random_article = await client.get_random_article.load({ id: 'get_random_article_id' })
+```python
+get_random_article = client.GetRandomArticle().load({"id": "get_random_article_id"})
 ```
 
 
@@ -317,7 +320,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-getrandomarticle = client.getrandomarticle
+getrandomarticle = client.GetRandomArticle()
 getrandomarticle.load({"id": "example_id"})
 
 # getrandomarticle.data_get() now returns the loaded getrandomarticle data

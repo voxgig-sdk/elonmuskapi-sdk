@@ -204,14 +204,7 @@ class ElonmuskapiSDK {
 
 
 
-  _get_random_article?: GetRandomArticleEntity
-
-  // Idiomatic facade: `client.get_random_article.list()` / `client.get_random_article.load({ id })`.
-  get get_random_article(): GetRandomArticleEntity {
-    return (this._get_random_article ??= new GetRandomArticleEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.get_random_article` instead. */
+  // Entity access: `client.GetRandomArticle().list()` / `client.GetRandomArticle().load({ id })`.
   GetRandomArticle(data?: any) {
     const self = this
     return new GetRandomArticleEntity(self,data)

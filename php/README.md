@@ -33,9 +33,10 @@ $client = new ElonmuskapiSDK();
 
 ```php
 try {
-    $result = $client->getrandomarticle()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare GetRandomArticle record (throws on error).
+    $getrandomarticle = $client->GetRandomArticle()->load(["id" => "example_id"]);
+    print_r($getrandomarticle);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = ElonmuskapiSDK::test();
+$client = ElonmuskapiSDK::test([
+    "entity" => ["getrandomarticle" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->getrandomarticle()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$getrandomarticle = $client->GetRandomArticle()->load(["id" => "test01"]);
+print_r($getrandomarticle);
 ```
 
 ### Use a custom fetch function
@@ -227,7 +232,7 @@ API path: `/`
 
 ### GetRandomArticle
 
-Create an instance: `const get_random_article = client.get_random_article`
+Create an instance: `$get_random_article = $client->GetRandomArticle();`
 
 #### Operations
 
@@ -247,8 +252,9 @@ Create an instance: `const get_random_article = client.get_random_article`
 
 #### Example: Load
 
-```ts
-const get_random_article = await client.get_random_article.load({ id: 'get_random_article_id' })
+```php
+// load() returns the bare GetRandomArticle record (throws on error).
+$get_random_article = $client->GetRandomArticle()->load(["id" => "get_random_article_id"]);
 ```
 
 
@@ -323,7 +329,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$getrandomarticle = $client->getrandomarticle();
+$getrandomarticle = $client->GetRandomArticle();
 $getrandomarticle->load(["id" => "example_id"]);
 
 // $getrandomarticle->dataGet() now returns the loaded getrandomarticle data

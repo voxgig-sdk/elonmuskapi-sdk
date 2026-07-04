@@ -26,9 +26,9 @@ import { ElonmuskapiSDK } from '@voxgig-sdk/elonmuskapi'
 
 const client = new ElonmuskapiSDK()
 
-// Load getrandomarticle data
-const getrandomarticle = await client.getrandomarticle.load({})
-console.log(getrandomarticle.data)
+// Load getrandomarticle data (returns a GetRandomArticle)
+const getrandomarticle = await client.GetRandomArticle().load()
+console.log(getrandomarticle)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from elonmuskapi_sdk import ElonmuskapiSDK
 client = ElonmuskapiSDK()
 
 
-# Load a specific getrandomarticle
-getrandomarticle = client.getrandomarticle.load({"id": "example_id"})
+# Load a specific getrandomarticle (returns the record, raises on error)
+getrandomarticle = client.GetRandomArticle().load({"id": "example_id"})
 print(getrandomarticle)
 ```
 
@@ -98,8 +98,8 @@ require_once 'elonmuskapi_sdk.php';
 $client = new ElonmuskapiSDK();
 
 
-// Load a specific getrandomarticle
-$getrandomarticle = $client->getrandomarticle()->load(["id" => "example_id"]);
+// Load a specific getrandomarticle (returns the bare record; throws on error)
+$getrandomarticle = $client->GetRandomArticle()->load(["id" => "example_id"]);
 print_r($getrandomarticle);
 ```
 
@@ -123,8 +123,8 @@ require_relative "Elonmuskapi_sdk"
 client = ElonmuskapiSDK.new
 
 
-# Load a specific getrandomarticle
-getrandomarticle = client.getrandomarticle.load({ "id" => "example_id" })
+# Load a specific getrandomarticle (returns the bare record; raises on error)
+getrandomarticle = client.GetRandomArticle.load({ "id" => "example_id" })
 puts getrandomarticle
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific getrandomarticle
-local getrandomarticle, err = client:getrandomarticle():load({ id = "example_id" })
+local getrandomarticle, err = client:GetRandomArticle():load({ id = "example_id" })
 print(getrandomarticle)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = ElonmuskapiSDK.test()
-const result = await client.getrandomarticle.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const getrandomarticle = await client.GetRandomArticle().load({ id: 'test01' })
+// getrandomarticle is a bare GetRandomArticle populated with mock data
+console.log(getrandomarticle)
 ```
 
 ### Python
 
 ```python
 client = ElonmuskapiSDK.test()
-result = client.getrandomarticle.load({"id": "test01"})
+getrandomarticle = client.GetRandomArticle().load({"id": "test01"})
+print(getrandomarticle)
 ```
 
 ### PHP
 
 ```php
-$client = ElonmuskapiSDK::test();
-$result = $client->getrandomarticle()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = ElonmuskapiSDK::test([
+    "entity" => ["getrandomarticle" => ["test01" => ["id" => "test01"]]],
+]);
+$getrandomarticle = $client->GetRandomArticle()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.GetRandomArticle(nil).Load(
 ### Ruby
 
 ```ruby
-client = ElonmuskapiSDK.test
-result = client.getrandomarticle.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = ElonmuskapiSDK.test({
+  "entity" => { "getrandomarticle" => { "test01" => { "id" => "test01" } } },
+})
+getrandomarticle = client.GetRandomArticle.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:getrandomarticle():load({ id = "test01" })
+local result, err = client:GetRandomArticle():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

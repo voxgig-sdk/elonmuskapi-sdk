@@ -32,8 +32,9 @@ client = ElonmuskapiSDK.new
 
 ```ruby
 begin
-  result = client.getrandomarticle.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare GetRandomArticle record (raises on error).
+  getrandomarticle = client.GetRandomArticle.load({ "id" => "example_id" })
+  puts getrandomarticle
 rescue => err
   warn "load failed: #{err}"
 end
@@ -80,13 +81,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = ElonmuskapiSDK.test
+client = ElonmuskapiSDK.test({
+  "entity" => { "getrandomarticle" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.getrandomarticle.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+getrandomarticle = client.GetRandomArticle.load({ "id" => "test01" })
+puts getrandomarticle
 ```
 
 ### Use a custom fetch function
@@ -222,7 +227,7 @@ API path: `/`
 
 ### GetRandomArticle
 
-Create an instance: `const get_random_article = client.get_random_article`
+Create an instance: `get_random_article = client.GetRandomArticle`
 
 #### Operations
 
@@ -242,8 +247,9 @@ Create an instance: `const get_random_article = client.get_random_article`
 
 #### Example: Load
 
-```ts
-const get_random_article = await client.get_random_article.load({ id: 'get_random_article_id' })
+```ruby
+# load returns the bare GetRandomArticle record (raises on error).
+get_random_article = client.GetRandomArticle.load({ "id" => "get_random_article_id" })
 ```
 
 
@@ -318,7 +324,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-getrandomarticle = client.getrandomarticle
+getrandomarticle = client.GetRandomArticle
 getrandomarticle.load({ "id" => "example_id" })
 
 # getrandomarticle.data_get now returns the loaded getrandomarticle data

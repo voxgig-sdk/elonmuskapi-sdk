@@ -233,10 +233,10 @@ class ElonmuskapiSDK
 
     private $_get_random_article = null;
 
-    // Idiomatic facade: $client->get_random_article()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias GetRandomArticle() (PHP method
-    // names are case-insensitive).
-    public function get_random_article($data = null)
+    // Canonical facade: $client->GetRandomArticle()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->get_random_article()
+    // resolves here too.
+    public function GetRandomArticle($data = null)
     {
         require_once __DIR__ . '/entity/get_random_article_entity.php';
         if ($data === null) {
