@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:get_random_article():list() / client:get_random_article():load({ id = ... })
+function ElonmuskapiSDK:get_random_article(data)
+  local EntityMod = require("entity.get_random_article_entity")
+  if data == nil then
+    if self._get_random_article == nil then
+      self._get_random_article = EntityMod.new(self, nil)
+    end
+    return self._get_random_article
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:get_random_article() instead.
 function ElonmuskapiSDK:GetRandomArticle(data)
   local EntityMod = require("entity.get_random_article_entity")
   return EntityMod.new(self, data)

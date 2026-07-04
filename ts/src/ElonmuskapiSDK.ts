@@ -2,6 +2,8 @@
 
 import { GetRandomArticleEntity } from './entity/GetRandomArticleEntity'
 
+export type * from './ElonmuskapiTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class ElonmuskapiSDK {
 
 
 
+  _get_random_article?: GetRandomArticleEntity
+
+  // Idiomatic facade: `client.get_random_article.list()` / `client.get_random_article.load({ id })`.
+  get get_random_article(): GetRandomArticleEntity {
+    return (this._get_random_article ??= new GetRandomArticleEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.get_random_article` instead. */
   GetRandomArticle(data?: any) {
     const self = this
     return new GetRandomArticleEntity(self,data)

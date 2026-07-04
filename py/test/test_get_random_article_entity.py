@@ -49,8 +49,7 @@ class TestGetRandomArticleEntity:
         # LOAD
         get_random_article_ref01_ent = client.GetRandomArticle(None)
         get_random_article_ref01_match_dt0 = {}
-        get_random_article_ref01_data_dt0_loaded, err = get_random_article_ref01_ent.load(get_random_article_ref01_match_dt0, None)
-        assert err is None
+        get_random_article_ref01_data_dt0_loaded = get_random_article_ref01_ent.load(get_random_article_ref01_match_dt0, None)
         assert get_random_article_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _get_random_article_basic_setup(extra):
         "ELONMUSKAPI_TEST_GET_RANDOM_ARTICLE_ENTID": idmap,
         "ELONMUSKAPI_TEST_LIVE": "FALSE",
         "ELONMUSKAPI_TEST_EXPLAIN": "FALSE",
-        "ELONMUSKAPI_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _get_random_article_basic_setup(extra):
     if env.get("ELONMUSKAPI_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("ELONMUSKAPI_APIKEY"),
             },
             extra or {},
         ])

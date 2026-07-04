@@ -9,9 +9,12 @@ The TypeScript SDK for the Elonmuskapi API — a type-safe, entity-oriented clie
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/elonmuskapi
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/elonmuskapi-sdk/releases](https://github.com/voxgig-sdk/elonmuskapi-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { ElonmuskapiSDK } from 'elonmuskapi'
+import { ElonmuskapiSDK } from '@voxgig-sdk/elonmuskapi'
 
-const client = new ElonmuskapiSDK({
-  apikey: process.env.ELONMUSKAPI_APIKEY,
-})
+const client = new ElonmuskapiSDK()
 ```
 
 ### 3. Load a getrandomarticle
 
 ```ts
-const result = await client.GetRandomArticle().load({ id: 'example_id' })
+const result = await client.getrandomarticle.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -79,7 +80,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = ElonmuskapiSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.getrandomarticle.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -87,7 +88,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new ElonmuskapiSDK({ apikey: '...' })
+const client = new ElonmuskapiSDK()
 const testClient = client.tester()
 ```
 
@@ -96,7 +97,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.getrandomarticle
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -123,7 +124,6 @@ const logger = {
 }
 
 const client = new ElonmuskapiSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -134,7 +134,6 @@ Create a `.env.local` file at the project root:
 
 ```
 ELONMUSKAPI_TEST_LIVE=TRUE
-ELONMUSKAPI_APIKEY=<your-key>
 ```
 
 Then run:
@@ -152,7 +151,6 @@ cd ts && npm test
 
 ```ts
 new ElonmuskapiSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -163,7 +161,6 @@ new ElonmuskapiSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -270,7 +267,7 @@ API path: `/`
 
 ### GetRandomArticle
 
-Create an instance: `const get_random_article = client.GetRandomArticle()`
+Create an instance: `const get_random_article = client.get_random_article`
 
 #### Operations
 
@@ -291,7 +288,7 @@ Create an instance: `const get_random_article = client.GetRandomArticle()`
 #### Example: Load
 
 ```ts
-const get_random_article = await client.GetRandomArticle().load({ id: 'get_random_article_id' })
+const get_random_article = await client.get_random_article.load({ id: 'get_random_article_id' })
 ```
 
 
@@ -352,7 +349,7 @@ elonmuskapi/
 Import the SDK from the package root:
 
 ```ts
-import { ElonmuskapiSDK } from 'elonmuskapi'
+import { ElonmuskapiSDK } from '@voxgig-sdk/elonmuskapi'
 ```
 
 ### Entity state
@@ -362,11 +359,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const getrandomarticle = client.getrandomarticle
+await getrandomarticle.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// getrandomarticle.data() now returns the loaded getrandomarticle data
+// getrandomarticle.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

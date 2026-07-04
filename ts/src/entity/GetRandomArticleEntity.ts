@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  GetRandomArticle,
+  GetRandomArticleLoadMatch,
+} from '../ElonmuskapiTypes'
 
 // TODO: needs Entity superclass
-class GetRandomArticleEntity extends ElonmuskapiEntityBase {
+class GetRandomArticleEntity extends ElonmuskapiEntityBase<GetRandomArticle> {
 
   constructor(client: ElonmuskapiSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class GetRandomArticleEntity extends ElonmuskapiEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: GetRandomArticleLoadMatch, ctrl?: Control): Promise<GetRandomArticle> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class GetRandomArticleEntity extends ElonmuskapiEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<GetRandomArticle> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

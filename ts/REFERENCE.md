@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `ElonmuskapiSDK.test()`.
 ## GetRandomArticleEntity
 
 ```ts
-const get_random_article = client.GetRandomArticle()
+const get_random_article = client.get_random_article
 ```
 
 ### Fields
@@ -130,7 +129,7 @@ const get_random_article = client.GetRandomArticle()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GetRandomArticle().load({ id: 'get_random_article_id' })
+const result = await client.get_random_article.load({ id: 'get_random_article_id' })
 ```
 
 ### Common Methods
