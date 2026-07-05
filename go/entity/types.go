@@ -17,8 +17,7 @@ type GetRandomArticle struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// GetRandomArticleLoadMatch mirrors the get_random_article fields as an all-optional match
-// filter (Go analog of Partial<GetRandomArticle>).
+// GetRandomArticleLoadMatch is the typed request payload for GetRandomArticle.LoadTyped.
 type GetRandomArticleLoadMatch struct {
 	Description *string `json:"description,omitempty"`
 	PublishedAt *string `json:"published_at,omitempty"`

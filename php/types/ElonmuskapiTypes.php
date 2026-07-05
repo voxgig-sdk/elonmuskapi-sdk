@@ -22,7 +22,7 @@ class GetRandomArticle
     public ?string $url = null;
 }
 
-/** Match filter for GetRandomArticle#load (any subset of GetRandomArticle fields). */
+/** Request payload for GetRandomArticle#load. */
 class GetRandomArticleLoadMatch
 {
     public ?string $description = null;

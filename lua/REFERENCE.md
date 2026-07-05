@@ -90,11 +90,11 @@ local get_random_article = client:GetRandomArticle(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `published_at` | `string` | No |  |
+| `source` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -103,7 +103,7 @@ local get_random_article = client:GetRandomArticle(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GetRandomArticle():load({ id = "get_random_article_id" })
+local result, err = client:GetRandomArticle():load()
 ```
 
 ### Common Methods

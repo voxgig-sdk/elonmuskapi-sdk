@@ -33,7 +33,7 @@ GetRandomArticle = Struct.new(
   keyword_init: true
 )
 
-# Match filter for GetRandomArticle#load (any subset of GetRandomArticle fields).
+# Request payload for GetRandomArticle#load.
 #
 # @!attribute [rw] description
 #   @return [String, nil]

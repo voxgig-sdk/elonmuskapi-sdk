@@ -8,7 +8,7 @@ Complete API reference for the Elonmuskapi Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'elonmuskapi_sdk'
+require_relative 'Elonmuskapi_sdk'
 
 client = ElonmuskapiSDK.new(options)
 ```
@@ -93,11 +93,11 @@ get_random_article = client.GetRandomArticle
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `description` | `String` | No |  |
+| `published_at` | `String` | No |  |
+| `source` | `String` | No |  |
+| `title` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
@@ -106,7 +106,7 @@ get_random_article = client.GetRandomArticle
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.GetRandomArticle.load({ "id" => "get_random_article_id" })
+result = client.GetRandomArticle.load()
 ```
 
 ### Common Methods

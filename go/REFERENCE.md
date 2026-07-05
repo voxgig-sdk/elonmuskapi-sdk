@@ -97,11 +97,11 @@ get_random_article := client.GetRandomArticle(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `published_at` | `string` | No |  |
+| `source` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -110,7 +110,7 @@ get_random_article := client.GetRandomArticle(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.GetRandomArticle(nil).Load(map[string]any{"id": "get_random_article_id"}, nil)
+result, err := client.GetRandomArticle(nil).Load(nil, nil)
 ```
 
 ### Common Methods

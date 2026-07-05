@@ -221,7 +221,7 @@ class ElonmuskapiSDK:
 
 
     def GetRandomArticle(self, data=None) -> "GetRandomArticleEntity":
-        """Entity factory: client.GetRandomArticle().list({}) / client.GetRandomArticle().load({"id": ...})."""
+        """Entity factory: client.GetRandomArticle().list() / client.GetRandomArticle().load({"id": ...})."""
         from entity.get_random_article_entity import GetRandomArticleEntity
         return GetRandomArticleEntity(self, data)
 

@@ -14,6 +14,11 @@
 ---@field url? string
 
 ---@class GetRandomArticleLoadMatch
+---@field description? string
+---@field published_at? string
+---@field source? string
+---@field title? string
+---@field url? string
 
 local M = {}
 

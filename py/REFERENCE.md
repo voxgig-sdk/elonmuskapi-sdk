@@ -87,11 +87,11 @@ get_random_article = client.GetRandomArticle()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `description` | `str` | No |  |
+| `published_at` | `str` | No |  |
+| `source` | `str` | No |  |
+| `title` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 
@@ -100,7 +100,7 @@ get_random_article = client.GetRandomArticle()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.GetRandomArticle().load({"id": "get_random_article_id"})
+result = client.GetRandomArticle().load()
 ```
 
 ### Common Methods

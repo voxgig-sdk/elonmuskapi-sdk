@@ -45,11 +45,11 @@ $client = ElonmuskapiSDK::test();
 
 Create a new `GetRandomArticleEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): ElonmuskapiUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,11 +92,11 @@ $get_random_article = $client->GetRandomArticle();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `published_at` | `string` | No |  |
+| `source` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -105,24 +105,24 @@ $get_random_article = $client->GetRandomArticle();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->GetRandomArticle()->load(["id" => "get_random_article_id"]);
+$result = $client->GetRandomArticle()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -131,7 +131,7 @@ Set the entity match criteria.
 Create a new `GetRandomArticleEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

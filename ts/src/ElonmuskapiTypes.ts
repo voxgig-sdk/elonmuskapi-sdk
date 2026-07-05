@@ -13,5 +13,11 @@ export interface GetRandomArticle {
   url?: string
 }
 
-export type GetRandomArticleLoadMatch = Partial<GetRandomArticle>
+export interface GetRandomArticleLoadMatch {
+  description?: string
+  published_at?: string
+  source?: string
+  title?: string
+  url?: string
+}
 
