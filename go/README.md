@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // Load a single getrandomarticle — the value is the loaded record.
-    getrandomarticle, err := client.GetRandomArticle(nil).Load(nil, nil)
+    // Load a single getRandomArticle — the value is the loaded record.
+    getRandomArticle, err := client.GetRandomArticle(nil).Load(nil, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(getrandomarticle)
+    fmt.Println(getRandomArticle)
 }
 ```
 
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-getrandomarticle, err := client.GetRandomArticle(nil).Load(
+getRandomArticle, err := client.GetRandomArticle(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(getrandomarticle) // the returned mock data
+fmt.Println(getRandomArticle) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -245,9 +245,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    getrandomarticle, err := client.GetRandomArticle(nil).Load(nil, nil)
+    getRandomArticle, err := client.GetRandomArticle(nil).Load(nil, nil)
     if err != nil { /* handle */ }
-    // getrandomarticle is the returned record
+    // getRandomArticle is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -275,7 +275,7 @@ API path: `/`
 
 ### GetRandomArticle
 
-Create an instance: `get_random_article := client.GetRandomArticle(nil)`
+Create an instance: `getRandomArticle := client.GetRandomArticle(nil)`
 
 #### Operations
 
@@ -296,11 +296,11 @@ Create an instance: `get_random_article := client.GetRandomArticle(nil)`
 #### Example: Load
 
 ```go
-get_random_article, err := client.GetRandomArticle(nil).Load(nil, nil)
+getRandomArticle, err := client.GetRandomArticle(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(get_random_article) // the loaded record
+fmt.Println(getRandomArticle) // the loaded record
 ```
 
 

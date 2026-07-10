@@ -90,7 +90,8 @@ same parameters as `Direct()`.
 ## GetRandomArticleEntity
 
 ```go
-get_random_article := client.GetRandomArticle(nil)
+getRandomArticle := client.GetRandomArticle(nil)
+fmt.Println(getRandomArticle.GetName()) // "get_random_article"
 ```
 
 ### Fields
@@ -111,6 +112,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.GetRandomArticle(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
