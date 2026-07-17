@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Elonmuskapi SDK exists test
 
 local sdk = require("elonmuskapi_sdk")
 
