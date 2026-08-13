@@ -11,7 +11,7 @@ main: kit: entity: get_random_article: {
       type: "`$STRING`"
     }
     {
-      name: "published_at"
+      name: "publishedAt"
       req: false
       type: "`$STRING`"
     }

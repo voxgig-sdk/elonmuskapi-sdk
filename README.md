@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = ElonmuskapiSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = ElonmuskapiSDK.test({
+  entity: {
+    get_random_article: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const getrandomarticle = await client.GetRandomArticle().load()
-// getrandomarticle is a bare GetRandomArticle populated with mock data
+// getrandomarticle is the GetRandomArticle entity, populated with mock data
+// — call getrandomarticle.data() for the record itself
 console.log(getrandomarticle)
 ```
 
@@ -182,7 +191,7 @@ require_once 'elonmuskapi_sdk.php';
 $client = new ElonmuskapiSDK();
 
 
-// Load a specific getrandomarticle (returns the bare record; throws on error)
+// Load a specific getrandomarticle (returns the ENTITY; call data_get() for the record; throws on error)
 $getrandomarticle = $client->GetRandomArticle()->load();
 print_r($getrandomarticle);
 ```
@@ -210,7 +219,7 @@ require_relative "Elonmuskapi_sdk"
 client = ElonmuskapiSDK.new
 
 
-# Load a specific getrandomarticle (returns the bare record; raises on error)
+# Load a specific getrandomarticle (returns the ENTITY; call data_get for the record)
 getrandomarticle = client.GetRandomArticle.load()
 puts getrandomarticle
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://elonmu.sh/](https://elonmu.sh/)
 

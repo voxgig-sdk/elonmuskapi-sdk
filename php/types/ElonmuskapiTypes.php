@@ -16,7 +16,7 @@ declare(strict_types=1);
 class GetRandomArticle
 {
     public ?string $description = null;
-    public ?string $published_at = null;
+    public ?string $publishedAt = null;
     public ?string $source = null;
     public ?string $title = null;
     public ?string $url = null;
@@ -26,7 +26,7 @@ class GetRandomArticle
 class GetRandomArticleLoadMatch
 {
     public ?string $description = null;
-    public ?string $published_at = null;
+    public ?string $publishedAt = null;
     public ?string $source = null;
     public ?string $title = null;
     public ?string $url = null;

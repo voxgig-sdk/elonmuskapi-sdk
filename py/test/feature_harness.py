@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import ElonmuskapiControl
-from core.error import ElonmuskapiError
-from core.result import ElonmuskapiResult
-from core.spec import ElonmuskapiSpec
+from elonmuskapi_sdk.config import make_config
+from elonmuskapi_sdk.features import _make_feature
+from elonmuskapi_sdk.core.control import ElonmuskapiControl
+from elonmuskapi_sdk.core.error import ElonmuskapiError
+from elonmuskapi_sdk.core.result import ElonmuskapiResult
+from elonmuskapi_sdk.core.spec import ElonmuskapiSpec
 
 
 # True when this SDK was generated with the named feature.

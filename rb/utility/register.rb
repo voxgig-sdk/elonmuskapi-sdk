@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ ElonmuskapiUtility.registrar = ->(u) {
   u.prepare_params = ElonmuskapiUtilities::PrepareParams
   u.prepare_path = ElonmuskapiUtilities::PreparePath
   u.prepare_query = ElonmuskapiUtilities::PrepareQuery
+  u.graphql_body = ElonmuskapiUtilities::GraphqlBody
+  u.graphql_errors = ElonmuskapiUtilities::GraphqlErrors
   u.result_basic = ElonmuskapiUtilities::ResultBasic
   u.result_body = ElonmuskapiUtilities::ResultBody
   u.result_headers = ElonmuskapiUtilities::ResultHeaders

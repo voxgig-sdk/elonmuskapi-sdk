@@ -16,11 +16,11 @@
 import pytest
 
 from elonmuskapi_sdk import ElonmuskapiSDK
-from core.error import ElonmuskapiError
-from core.result import ElonmuskapiResult
-from core.response import ElonmuskapiResponse
-from core.spec import ElonmuskapiSpec
-from feature.base_feature import ElonmuskapiBaseFeature
+from elonmuskapi_sdk.core.error import ElonmuskapiError
+from elonmuskapi_sdk.core.result import ElonmuskapiResult
+from elonmuskapi_sdk.core.response import ElonmuskapiResponse
+from elonmuskapi_sdk.core.spec import ElonmuskapiSpec
+from elonmuskapi_sdk.feature.base_feature import ElonmuskapiBaseFeature
 
 
 def _client():

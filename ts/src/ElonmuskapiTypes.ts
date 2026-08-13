@@ -7,7 +7,7 @@
 
 export interface GetRandomArticle {
   description?: string
-  published_at?: string
+  publishedAt?: string
   source?: string
   title?: string
   url?: string
@@ -15,7 +15,7 @@ export interface GetRandomArticle {
 
 export interface GetRandomArticleLoadMatch {
   description?: string
-  published_at?: string
+  publishedAt?: string
   source?: string
   title?: string
   url?: string

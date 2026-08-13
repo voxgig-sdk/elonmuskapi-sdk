@@ -94,7 +94,7 @@ get_random_article = client.GetRandomArticle
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `description` | `String` | No |  |
-| `published_at` | `String` | No |  |
+| `publishedAt` | `String` | No |  |
 | `source` | `String` | No |  |
 | `title` | `String` | No |  |
 | `url` | `String` | No |  |

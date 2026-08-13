@@ -39,7 +39,7 @@ class ElonmuskapiConfig
             ],
             [
               'active' => true,
-              'name' => 'published_at',
+              'name' => 'publishedAt',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 1,
@@ -75,6 +75,7 @@ class ElonmuskapiConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/',
                   'parts' => [],

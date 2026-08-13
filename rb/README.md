@@ -34,7 +34,7 @@ client = ElonmuskapiSDK.new
 
 ```ruby
 begin
-  # load returns the bare GetRandomArticle record (raises on error).
+  # load returns the ENTITY — call data_get for the GetRandomArticle record (raises on error).
   getrandomarticle = client.GetRandomArticle.load()
   puts getrandomarticle
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = ElonmuskapiSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 getrandomarticle = client.GetRandomArticle.load()
 puts getrandomarticle
 ```
@@ -235,7 +236,7 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `description` |  |
-| `published_at` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -264,7 +265,7 @@ Create an instance: `get_random_article = client.GetRandomArticle`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `String` |  |
-| `published_at` | `String` |  |
+| `publishedAt` | `String` |  |
 | `source` | `String` |  |
 | `title` | `String` |  |
 | `url` | `String` |  |
@@ -272,7 +273,7 @@ Create an instance: `get_random_article = client.GetRandomArticle`
 #### Example: Load
 
 ```ruby
-# load returns the bare GetRandomArticle record (raises on error).
+# load returns the ENTITY — call data_get for the GetRandomArticle record (raises on error).
 get_random_article = client.GetRandomArticle.load()
 ```
 

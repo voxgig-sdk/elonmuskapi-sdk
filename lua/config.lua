@@ -33,7 +33,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "published_at",
+            ["name"] = "publishedAt",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 1,
@@ -69,6 +69,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/",
                 ["parts"] = {},

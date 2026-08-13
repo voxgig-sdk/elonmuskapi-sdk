@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = ElonmuskapiSDK.test()
 
 const getrandomarticle = await client.GetRandomArticle().load()
-// getrandomarticle is a bare entity populated with mock response data
+// getrandomarticle is the entity, populated with mock response data
+// — call getrandomarticle.data() for the record itself
 console.log(getrandomarticle)
 ```
 
@@ -285,7 +286,7 @@ The `prepare()` method returns:
 | Field | Description |
 | --- | --- |
 | `description` |  |
-| `published_at` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -314,7 +315,7 @@ Create an instance: `const get_random_article = client.GetRandomArticle()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `string` |  |
-| `published_at` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |

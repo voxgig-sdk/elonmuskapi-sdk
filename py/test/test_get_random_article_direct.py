@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from elonmuskapi_sdk.utility.voxgig_struct import voxgig_struct as vs
 from elonmuskapi_sdk import ElonmuskapiSDK
-from core import helpers
+from elonmuskapi_sdk.core import helpers
 from test import runner
 
 

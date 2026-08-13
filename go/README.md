@@ -259,7 +259,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"description"` |  |
-| `"published_at"` |  |
+| `"publishedAt"` |  |
 | `"source"` |  |
 | `"title"` |  |
 | `"url"` |  |
@@ -288,7 +288,7 @@ Create an instance: `getRandomArticle := client.GetRandomArticle(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `string` |  |
-| `published_at` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |

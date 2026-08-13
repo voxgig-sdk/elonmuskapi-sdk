@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Elonmuskapi SDK exists test
 
 import pytest
 from elonmuskapi_sdk import ElonmuskapiSDK

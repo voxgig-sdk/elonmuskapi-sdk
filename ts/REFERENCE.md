@@ -117,7 +117,7 @@ const get_random_article = client.GetRandomArticle()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `description` | `string` | No |  |
-| `published_at` | `string` | No |  |
+| `publishedAt` | `string` | No |  |
 | `source` | `string` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |

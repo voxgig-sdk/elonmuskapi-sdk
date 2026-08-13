@@ -13,7 +13,7 @@
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] source
@@ -26,7 +26,7 @@
 #   @return [String, nil]
 GetRandomArticle = Struct.new(
   :description,
-  :published_at,
+  :publishedAt,
   :source,
   :title,
   :url,
@@ -38,7 +38,7 @@ GetRandomArticle = Struct.new(
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] source
@@ -51,7 +51,7 @@ GetRandomArticle = Struct.new(
 #   @return [String, nil]
 GetRandomArticleLoadMatch = Struct.new(
   :description,
-  :published_at,
+  :publishedAt,
   :source,
   :title,
   :url,

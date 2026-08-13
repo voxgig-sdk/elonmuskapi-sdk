@@ -3,7 +3,7 @@
     "get_random_article": {
       "GET_RANDOM_ARTICLE00": {
         "description": "s32",
-        "published_at": "s33",
+        "publishedAt": "s33",
         "source": "s34",
         "title": "s35",
         "url": "s36",
@@ -11,7 +11,7 @@
       },
       "GET_RANDOM_ARTICLE01": {
         "description": "s64",
-        "published_at": "s65",
+        "publishedAt": "s65",
         "source": "s66",
         "title": "s67",
         "url": "s68",
@@ -19,7 +19,7 @@
       },
       "GET_RANDOM_ARTICLE02": {
         "description": "s96",
-        "published_at": "s97",
+        "publishedAt": "s97",
         "source": "s98",
         "title": "s99",
         "url": "s9a",
@@ -31,7 +31,7 @@
     "get_random_article": {
       "get_random_article_ref01": {
         "description": "sc8",
-        "published_at": "sc9",
+        "publishedAt": "sc9",
         "source": "sca",
         "title": "scb",
         "url": "scc"

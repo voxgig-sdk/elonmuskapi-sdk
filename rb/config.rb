@@ -34,7 +34,7 @@ module ElonmuskapiConfig
             },
             {
               "active" => true,
-              "name" => "published_at",
+              "name" => "publishedAt",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 1,
@@ -70,6 +70,7 @@ module ElonmuskapiConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/",
                   "parts" => [],

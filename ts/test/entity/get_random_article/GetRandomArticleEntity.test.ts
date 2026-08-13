@@ -62,7 +62,7 @@ describe('GetRandomArticleEntity', async () => {
     // LOAD
     const get_random_article_ref01_ent = client.GetRandomArticle()
     const get_random_article_ref01_match_dt0: any = {}
-    const get_random_article_ref01_data_dt0 = await get_random_article_ref01_ent.load(get_random_article_ref01_match_dt0)
+    const get_random_article_ref01_data_dt0 = (await get_random_article_ref01_ent.load(get_random_article_ref01_match_dt0)).data()
     assert(null != get_random_article_ref01_data_dt0)
 
 

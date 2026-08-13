@@ -35,7 +35,7 @@ $client = new ElonmuskapiSDK();
 
 ```php
 try {
-    // load() returns the bare GetRandomArticle record (throws on error).
+    // load() returns the ENTITY — call data_get() for the GetRandomArticle record (throws on error).
     $getrandomarticle = $client->GetRandomArticle()->load();
     print_r($getrandomarticle);
 } catch (\Throwable $err) {
@@ -123,7 +123,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = ElonmuskapiSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $getrandomarticle = $client->GetRandomArticle()->load();
 print_r($getrandomarticle);
 ```
@@ -222,7 +223,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -245,7 +246,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `description` |  |
-| `published_at` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -274,7 +275,7 @@ Create an instance: `$get_random_article = $client->GetRandomArticle();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `string` |  |
-| `published_at` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -282,7 +283,7 @@ Create an instance: `$get_random_article = $client->GetRandomArticle();`
 #### Example: Load
 
 ```php
-// load() returns the bare GetRandomArticle record (throws on error).
+// load() returns the ENTITY — call data_get() for the GetRandomArticle record (throws on error).
 $get_random_article = $client->GetRandomArticle()->load();
 ```
 

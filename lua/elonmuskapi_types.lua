@@ -8,14 +8,14 @@
 
 ---@class GetRandomArticle
 ---@field description? string
----@field published_at? string
+---@field publishedAt? string
 ---@field source? string
 ---@field title? string
 ---@field url? string
 
 ---@class GetRandomArticleLoadMatch
 ---@field description? string
----@field published_at? string
+---@field publishedAt? string
 ---@field source? string
 ---@field title? string
 ---@field url? string
