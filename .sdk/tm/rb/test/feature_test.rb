@@ -15,7 +15,7 @@ require_relative "../Elonmuskapi_sdk"
 module ElonmuskapiFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = ElonmuskapiConfig.make_config["feature"]
+    f = ElonmuskapiConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

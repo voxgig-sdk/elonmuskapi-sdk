@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from elonmuskapi_sdk.config import make_config
+from elonmuskapi_sdk.config import shared_config
 from elonmuskapi_sdk.features import _make_feature
 from elonmuskapi_sdk.core.control import ElonmuskapiControl
 from elonmuskapi_sdk.core.error import ElonmuskapiError
@@ -24,7 +24,7 @@ from elonmuskapi_sdk.core.spec import ElonmuskapiSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

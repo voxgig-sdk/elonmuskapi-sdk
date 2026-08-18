@@ -28,7 +28,7 @@ class ElonmuskapiSDK
     utility = ElonmuskapiUtility.new
     @_utility = utility
 
-    config = ElonmuskapiConfig.make_config
+    config = ElonmuskapiConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

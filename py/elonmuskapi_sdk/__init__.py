@@ -23,8 +23,8 @@ class ElonmuskapiSDK:
         utility = ElonmuskapiUtility()
         self._utility = utility
 
-        from elonmuskapi_sdk.config import make_config
-        config = make_config()
+        from elonmuskapi_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

@@ -40,7 +40,7 @@ class ElonmuskapiSDK
         $utility = new ElonmuskapiUtility();
         $this->_utility = $utility;
 
-        $config = ElonmuskapiConfig::make_config();
+        $config = ElonmuskapiConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
