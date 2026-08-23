@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "Elonmuskapi",
+      slug = "elonmuskapi",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -29,22 +32,27 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "description",
+            ["short"] = "A brief description or excerpt from the article",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "publishedAt",
+            ["short"] = "The publication date and time of the article",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "source",
+            ["short"] = "The news outlet that published the article",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "title",
+            ["short"] = "The title of the news article",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "url",
+            ["short"] = "The URL to the original news article",
             ["type"] = "`$STRING`",
           },
         },

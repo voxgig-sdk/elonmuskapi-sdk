@@ -235,11 +235,11 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `description` | A brief description or excerpt from the article |
+| `publishedAt` | The publication date and time of the article |
+| `source` | The news outlet that published the article |
+| `title` | The title of the news article |
+| `url` | The URL to the original news article |
 
 Operations: Load.
 
@@ -264,11 +264,11 @@ Create an instance: `get_random_article = client.GetRandomArticle`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `String` |  |
-| `publishedAt` | `String` |  |
-| `source` | `String` |  |
-| `title` | `String` |  |
-| `url` | `String` |  |
+| `description` | `String` | A brief description or excerpt from the article |
+| `publishedAt` | `String` | The publication date and time of the article |
+| `source` | `String` | The news outlet that published the article |
+| `title` | `String` | The title of the news article |
+| `url` | `String` | The URL to the original news article |
 
 #### Example: Load
 

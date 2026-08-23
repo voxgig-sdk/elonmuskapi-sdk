@@ -93,11 +93,11 @@ get_random_article = client.GetRandomArticle
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `String` | No |  |
-| `publishedAt` | `String` | No |  |
-| `source` | `String` | No |  |
-| `title` | `String` | No |  |
-| `url` | `String` | No |  |
+| `description` | `String` | No | A brief description or excerpt from the article |
+| `publishedAt` | `String` | No | The publication date and time of the article |
+| `source` | `String` | No | The news outlet that published the article |
+| `title` | `String` | No | The title of the news article |
+| `url` | `String` | No | The URL to the original news article |
 
 ### Operations
 

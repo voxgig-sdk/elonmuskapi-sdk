@@ -241,11 +241,11 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `description` | A brief description or excerpt from the article |
+| `publishedAt` | The publication date and time of the article |
+| `source` | The news outlet that published the article |
+| `title` | The title of the news article |
+| `url` | The URL to the original news article |
 
 Operations: Load.
 
@@ -270,11 +270,11 @@ Create an instance: `get_random_article = client.GetRandomArticle()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `str` |  |
-| `publishedAt` | `str` |  |
-| `source` | `str` |  |
-| `title` | `str` |  |
-| `url` | `str` |  |
+| `description` | `str` | A brief description or excerpt from the article |
+| `publishedAt` | `str` | The publication date and time of the article |
+| `source` | `str` | The news outlet that published the article |
+| `title` | `str` | The title of the news article |
+| `url` | `str` | The URL to the original news article |
 
 #### Example: Load
 

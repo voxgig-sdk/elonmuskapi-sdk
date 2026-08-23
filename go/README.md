@@ -6,7 +6,7 @@ The Golang SDK for the Elonmuskapi API — an entity-oriented client using stand
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.GetRandomArticle(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,11 +258,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"description"` |  |
-| `"publishedAt"` |  |
-| `"source"` |  |
-| `"title"` |  |
-| `"url"` |  |
+| `"description"` | A brief description or excerpt from the article |
+| `"publishedAt"` | The publication date and time of the article |
+| `"source"` | The news outlet that published the article |
+| `"title"` | The title of the news article |
+| `"url"` | The URL to the original news article |
 
 Operations: Load.
 
@@ -287,11 +287,11 @@ Create an instance: `getRandomArticle := client.GetRandomArticle(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `publishedAt` | `string` |  |
-| `source` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `description` | `string` | A brief description or excerpt from the article |
+| `publishedAt` | `string` | The publication date and time of the article |
+| `source` | `string` | The news outlet that published the article |
+| `title` | `string` | The title of the news article |
+| `url` | `string` | The URL to the original news article |
 
 #### Example: Load
 

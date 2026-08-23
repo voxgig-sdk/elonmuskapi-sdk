@@ -98,11 +98,11 @@ fmt.Println(getRandomArticle.GetName()) // "get_random_article"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `publishedAt` | `string` | No |  |
-| `source` | `string` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
+| `description` | `string` | No | A brief description or excerpt from the article |
+| `publishedAt` | `string` | No | The publication date and time of the article |
+| `source` | `string` | No | The news outlet that published the article |
+| `title` | `string` | No | The title of the news article |
+| `url` | `string` | No | The URL to the original news article |
 
 ### Operations
 

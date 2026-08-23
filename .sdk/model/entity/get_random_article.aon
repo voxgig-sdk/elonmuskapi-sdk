@@ -8,26 +8,31 @@ main: kit: entity: get_random_article: {
     {
       name: "description"
       req: false
+      short: "A brief description or excerpt from the article"
       type: "`$STRING`"
     }
     {
       name: "publishedAt"
       req: false
+      short: "The publication date and time of the article"
       type: "`$STRING`"
     }
     {
       name: "source"
       req: false
+      short: "The news outlet that published the article"
       type: "`$STRING`"
     }
     {
       name: "title"
       req: false
+      short: "The title of the news article"
       type: "`$STRING`"
     }
     {
       name: "url"
       req: false
+      short: "The URL to the original news article"
       type: "`$STRING`"
     }
   ]

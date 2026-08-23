@@ -225,11 +225,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `description` | A brief description or excerpt from the article |
+| `publishedAt` | The publication date and time of the article |
+| `source` | The news outlet that published the article |
+| `title` | The title of the news article |
+| `url` | The URL to the original news article |
 
 Operations: Load.
 
@@ -254,11 +254,11 @@ Create an instance: `local get_random_article = client:GetRandomArticle(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `publishedAt` | `string` |  |
-| `source` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `description` | `string` | A brief description or excerpt from the article |
+| `publishedAt` | `string` | The publication date and time of the article |
+| `source` | `string` | The news outlet that published the article |
+| `title` | `string` | The title of the news article |
+| `url` | `string` | The URL to the original news article |
 
 #### Example: Load
 
