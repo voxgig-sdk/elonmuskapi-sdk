@@ -63,6 +63,7 @@ class ElonmuskapiConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'date-time',
               'name' => 'publishedAt',
               'short' => 'The publication date and time of the article',
               'type' => '`$STRING`',
@@ -78,6 +79,7 @@ class ElonmuskapiConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'url',
               'short' => 'The URL to the original news article',
               'type' => '`$STRING`',
@@ -94,12 +96,13 @@ class ElonmuskapiConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/',
-                  'parts' => [],
+                  'segments' => [],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
+                  'parts' => [],
                 ],
               ],
             ],

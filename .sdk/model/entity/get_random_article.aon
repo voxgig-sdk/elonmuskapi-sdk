@@ -12,6 +12,7 @@ main: kit: entity: get_random_article: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "publishedAt"
       req: false
       short: "The publication date and time of the article"
@@ -30,6 +31,7 @@ main: kit: entity: get_random_article: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "The URL to the original news article"
