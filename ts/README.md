@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { ElonmuskapiSDK } from '@voxgig-sdk/elonmuskapi'
+import { ElonmuskapiSDK } from '@voxgig-sdk/elonmuskapi-sdk'
 
 const client = new ElonmuskapiSDK()
 ```
@@ -409,7 +409,7 @@ elonmuskapi/
 Import the SDK from the package root:
 
 ```ts
-import { ElonmuskapiSDK } from '@voxgig-sdk/elonmuskapi'
+import { ElonmuskapiSDK } from '@voxgig-sdk/elonmuskapi-sdk'
 ```
 
 ### Entity state

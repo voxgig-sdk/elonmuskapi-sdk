@@ -105,7 +105,7 @@ local result, err = client:GetRandomArticle():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/elonmuskapi` | publish pending — [install from git tag](https://github.com/voxgig-sdk/elonmuskapi-sdk/releases) |
+| TypeScript | `@voxgig-sdk/elonmuskapi-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/elonmuskapi-sdk/releases) |
 | Python | `voxgig-sdk-elonmuskapi` | publish pending — [install from git tag](https://github.com/voxgig-sdk/elonmuskapi-sdk/releases) |
 | PHP | `voxgig-sdk/elonmuskapi` | publish pending — [install from git tag](https://github.com/voxgig-sdk/elonmuskapi-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/elonmuskapi-sdk/go` | `go get github.com/voxgig-sdk/elonmuskapi-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:GetRandomArticle():load()
 ### TypeScript
 
 ```ts
-import { ElonmuskapiSDK } from '@voxgig-sdk/elonmuskapi'
+import { ElonmuskapiSDK } from '@voxgig-sdk/elonmuskapi-sdk'
 
 const client = new ElonmuskapiSDK()
 
