@@ -1,12 +1,18 @@
 # Elonmuskapi SDK feature factory
 
 from elonmuskapi_sdk.feature.base_feature import ElonmuskapiBaseFeature
+from elonmuskapi_sdk.feature.ratelimit_feature import ElonmuskapiRatelimitFeature
+from elonmuskapi_sdk.feature.retry_feature import ElonmuskapiRetryFeature
 from elonmuskapi_sdk.feature.test_feature import ElonmuskapiTestFeature
+from elonmuskapi_sdk.feature.timeout_feature import ElonmuskapiTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: ElonmuskapiBaseFeature(),
+    "ratelimit": lambda: ElonmuskapiRatelimitFeature(),
+    "retry": lambda: ElonmuskapiRetryFeature(),
     "test": lambda: ElonmuskapiTestFeature(),
+    "timeout": lambda: ElonmuskapiTimeoutFeature(),
 }
 
 

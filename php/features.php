@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Elonmuskapi SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class ElonmuskapiFeatures
@@ -14,8 +17,14 @@ class ElonmuskapiFeatures
         switch ($name) {
             case "base":
                 return new ElonmuskapiBaseFeature();
+            case "ratelimit":
+                return new ElonmuskapiRatelimitFeature();
+            case "retry":
+                return new ElonmuskapiRetryFeature();
             case "test":
                 return new ElonmuskapiTestFeature();
+            case "timeout":
+                return new ElonmuskapiTimeoutFeature();
             default:
                 return new ElonmuskapiBaseFeature();
         }
@@ -31,7 +40,10 @@ class ElonmuskapiFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

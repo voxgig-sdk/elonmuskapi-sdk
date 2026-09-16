@@ -45,6 +45,12 @@ main: kit: entity: get_random_article: {
       name: "load"
       points: [
         {
+          contract: {
+            id: "GET /"
+            json: "{\"operationId\":\"getRandomArticle\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"description\":\"Tesla CEO Elon Musk unveiled the latest electric vehicle innovation...\",\"publishedAt\":\"2024-01-15T10:30:00Z\",\"source\":\"TechNews Daily\",\"title\":\"Elon Musk Announces New Tesla Model\",\"url\":\"https://example.com/article\"},\"schema\":{\"properties\":{\"description\":{\"description\":\"A brief description or excerpt from the article\",\"type\":\"string\"},\"publishedAt\":{\"description\":\"The publication date and time of the article\",\"format\":\"date-time\",\"type\":\"string\"},\"source\":{\"description\":\"The news outlet that published the article\",\"type\":\"string\"},\"title\":{\"description\":\"The title of the news article\",\"type\":\"string\"},\"url\":{\"description\":\"The URL to the original news article\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with a random news article\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/"
           transform: {
