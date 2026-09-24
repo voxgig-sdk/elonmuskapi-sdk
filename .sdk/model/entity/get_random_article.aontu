@@ -1,0 +1,71 @@
+# Entity: get_random_article
+
+main: kit: entity: get_random_article: {
+
+  alias: field: {}
+
+  fields: {
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "A brief description or excerpt from the article"
+      t: "`$STRING`"
+    }
+    publishedAt: {
+      fo: "date-time"
+      h: "Published At"
+      n: "publishedAt"
+      r: false
+      sh: "The publication date and time of the article"
+      t: "`$STRING`"
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: false
+      sh: "The news outlet that published the article"
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: false
+      sh: "The title of the news article"
+      t: "`$STRING`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "The URL to the original news article"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "get_random_article"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/"
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

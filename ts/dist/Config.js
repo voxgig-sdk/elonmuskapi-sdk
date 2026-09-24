@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,30 +107,35 @@ class Config {
             "fields": [
                 {
                     "name": "description",
-                    "short": "A brief description or excerpt from the article",
-                    "type": "`$STRING`"
+                    "title": "Description",
+                    "type": "`$STRING`",
+                    "short": "A brief description or excerpt from the article"
                 },
                 {
-                    "format": "date-time",
                     "name": "publishedAt",
+                    "title": "Published At",
+                    "type": "`$STRING`",
                     "short": "The publication date and time of the article",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "source",
-                    "short": "The news outlet that published the article",
-                    "type": "`$STRING`"
+                    "title": "Source",
+                    "type": "`$STRING`",
+                    "short": "The news outlet that published the article"
                 },
                 {
                     "name": "title",
-                    "short": "The title of the news article",
-                    "type": "`$STRING`"
+                    "title": "Title",
+                    "type": "`$STRING`",
+                    "short": "The title of the news article"
                 },
                 {
-                    "format": "uri",
                     "name": "url",
+                    "title": "Url",
+                    "type": "`$STRING`",
                     "short": "The URL to the original news article",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 }
             ],
             "name": "get_random_article",
@@ -147,17 +145,18 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/",
                             "segments": [],
-                            "select": {},
+                            "parts": [],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": []
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }

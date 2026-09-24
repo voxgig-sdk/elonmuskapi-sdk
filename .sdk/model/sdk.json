@@ -24,51 +24,122 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "get_random_article": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "A brief description or excerpt from the article",
-              "type": "`$STRING`"
+          "fields": {
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "A brief description or excerpt from the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "date-time",
-              "name": "publishedAt",
-              "req": false,
-              "short": "The publication date and time of the article",
-              "type": "`$STRING`"
+            "publishedAt": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Published At",
+              "n": "publishedAt",
+              "r": false,
+              "sh": "The publication date and time of the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "source",
-              "req": false,
-              "short": "The news outlet that published the article",
-              "type": "`$STRING`"
+            "source": {
+              "a": true,
+              "h": "Source",
+              "n": "source",
+              "r": false,
+              "sh": "The news outlet that published the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": false,
-              "short": "The title of the news article",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "The title of the news article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "url",
-              "req": false,
-              "short": "The URL to the original news article",
-              "type": "`$STRING`"
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "The URL to the original news article",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "get_random_article",
           "op": {
             "load": {
@@ -76,20 +147,20 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /",
-                    "json": "{\"operationId\":\"getRandomArticle\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"description\":\"Tesla CEO Elon Musk unveiled the latest electric vehicle innovation...\",\"publishedAt\":\"2024-01-15T10:30:00Z\",\"source\":\"TechNews Daily\",\"title\":\"Elon Musk Announces New Tesla Model\",\"url\":\"https://example.com/article\"},\"schema\":{\"properties\":{\"description\":{\"description\":\"A brief description or excerpt from the article\",\"type\":\"string\"},\"publishedAt\":{\"description\":\"The publication date and time of the article\",\"format\":\"date-time\",\"type\":\"string\"},\"source\":{\"description\":\"The news outlet that published the article\",\"type\":\"string\"},\"title\":{\"description\":\"The title of the news article\",\"type\":\"string\"},\"url\":{\"description\":\"The URL to the original news article\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with a random news article\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/",
-                  "segments": [],
-                  "select": {},
-                  "transform": {
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/",
+                  "q": {},
+                  "r": {},
+                  "s": [],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -518,17 +589,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "get_random_article_ref01",
                 "srcdatavar": "get_random_article_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
